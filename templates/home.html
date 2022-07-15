@@ -6,6 +6,17 @@
 
 <p>Looking for work? <b>{{hireable}}</b></p>
 
+<h3>Things I'm doing</h3>
+<div>
+    {{pinned}}
+        <div>
+            <h4>{{repo.name}}</h4>
+            <p>{{repo.description}}<p>
+            <p>{{repo.languages}}</p>
+        </div>
+    {{/pinned}}
+</div>
+
 <ul>
     {{posts}}
 </ul>
