@@ -8,15 +8,17 @@
 
 <h3>Things I'm doing</h3>
 <div>
-    {{pinned}}
+    {{#each pinned}}
         <div>
-            <h4>{{repo.name}}</h4>
-            <p>{{repo.description}}<p>
-            <p>{{repo.languages}}</p>
+            <h4>{{this.name}}</h4>
+            <p>{{this.description}}</p>
+            <p>{{this.languages}}</p>
         </div>
-    {{/pinned}}
+    {{/each}}
 </div>
 
 <ul>
-    {{posts}}
+    {{#each posts}}
+    	<li><a href="{{this.link}}">{{this.title}}</a></li>
+    {{/each}}
 </ul>
