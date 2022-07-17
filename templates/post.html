@@ -10,7 +10,7 @@
 
 <hr/>
 
-{{if gt (len post.labels) 0}}
+{{#if (gt (len post.labels) 0)}}
 <p>Labels:</p>
 <ul>
     {{#each post.labels}}
