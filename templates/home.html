@@ -4,6 +4,11 @@
 
 <p>{{user.bio}}</p>
 
+<ul>
+    <li><a href="{{user.github_profile}}">Github</a></li>
+    <li><a href="{{user.twitter_profile}}">Twitter</a></li>
+</ul>
+
 {{#if user.hireable}}
 <p>I'm looking for work!</p>
 {{else}}
