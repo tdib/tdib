@@ -1,28 +1,37 @@
-<h1>{{name}}</h1>
+<h1>{{user.name}}</h1>
 
-<img src="{{profile_picture}}" />
+<img src="{{user.profile_picture}}" />
 
-<p>{{bio}}</p>
+<p>{{user.bio}}</p>
 
-<p>Looking for work? <b>{{hireable}}</b></p>
+{{#if user.hireable}}
+<p>I'm looking for work!</p>
+{{else}}
+<p>I'm working at {{user.company}}
+{{/if}}
 
 <div>
-    {{{body}}}
+    {{{readme}}}
 </div>
 
 <h3>Things I'm doing</h3>
 <div>
     {{#each pinned}}
         <div>
-            <h4>{{this.name}}</h4>
+            <h4><a href="{{this.homepage}}">{{this.name}}</a></h4>
             <p>{{this.description}}</p>
             <p>{{this.languages}}</p>
+            <ul>
+                <li>{{this.stargazers}} stars</li>
+                <li>{{this.forks}} forks</li>
+                <li><a href="{{this.github_url}}">Github</a></li>
+            </ul>
         </div>
     {{/each}}
 </div>
 
 <ul>
     {{#each posts}}
-    	<li><a href="{{this.link}}">{{this.title}}</a></li>
+    	<li><a href="{{this.link}}">{{this.title}}</a> ({{#each this.labels}}{{this.name}}, {{/each}})</li>
     {{/each}}
 </ul>
