@@ -1,5 +1,20 @@
 <h1>{{post.title}}</h1>
 
+<p>Written at {{post.created}}</p>
+
+<hr />
+
 <div>
     {{{post.body}}}
 </div>
+
+<hr/>
+
+{{if (gt (len post.labels) 0)}}
+<p>Labels:</p>
+<ul>
+    {{#each post.labels}}
+    <li>{{this.name}}</li>
+    {{/each}}
+</ul>
+{/if}
