@@ -47,7 +47,7 @@
     </div>
 </div>
 
-<div id="content">
+<article id="content">
     {{{readme}}}
 
     <h1>What I'm Working On</h1>
@@ -58,7 +58,7 @@
                 <h3>{{this.name}}</h3>
                 <div>
                     <div>
-                        <p class="forks">{{this.forks}}</p>
+                        <p class="forks">{{this.forks</p>
                         <div class="icon">
                             <svg viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="translate(2 3)"><path d="m12.5.5 3 3-3 3"/><path d="m15.5 3.5h-5l-4 5.086"/><path d="m12.5 9.5 3 3-3 3"/><path d="m15.5 12.5h-5l-4-4h-6"/></g></svg>
                         </div>
@@ -71,22 +71,20 @@
                     </div>
                 </div>
             </div>
-            <div class="languages">
+            <div class="pill_bar">
                 {{#each this.languages}}
                 <p>{{this}}</p>
                 {{/each}}
             </div>
-            <p class="description">{{this.description}}</p>
+            <p class="description">{{this.descriptions}}</p>
             <div class="links">
                 <a href="{{this.github_url}}"><p>Source</p></a>
-                {{#if this.homepage}}
-                <a href="{{this.homepage}}"><p>Visit</p></a>
-                {{/if}}
+                {{#if this.homepage}}<a href="{{this.homepage}}"><p>Visit</p></a>{{/if}}
             </div>
         </div>
         {{/each}}
     </div>
-</div>
+</article>
 
 <script>
     document.getElementById("arrow_down").addEventListener("click", () => window.scrollTo({top: document.body.clientHeight * 3 / 4, left: 0, behavior: 'smooth'}));
