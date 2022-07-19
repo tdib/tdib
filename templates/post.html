@@ -1,20 +1,39 @@
-<h1>{{post.title}}</h1>
+<a class="no_link" href="/">
+    <h2 id="logo" class="hover_line">{{user.name}}</h2>
+</a>
 
-<p>Written at {{post.created}}</p>
+<header>
+    <h1>{{post.title}}</h1>
 
-<hr />
+    <div id="info">
+        <div class="pill_bar">
+            {{#each post.labels}}
+            <p>{{this.name}}</p>
+            {{/each}}
+        </div>
 
-<div>
+        <div id="timestamp">
+            <p>Last updated <span class="timestamp">{{post.created}}</span></p>
+        </div>
+    </div>
+</header>
+
+<article>
     {{{post.body}}}
-</div>
+</article>
 
-<hr/>
+<footer>
+    <img src="{{user.profile_picture}}"/>
+    <div id="user_card">
+        <h3>{{user.name}}</h3>
+        <p><a href="{{user.github_profile}}">GitHub</a></p>
+        <p><a href="{{user.twitter_profile}}">Twitter</a></p>
+    </div>
+</footer>
 
-{{#if (gt (len post.labels) 0)}}
-<p>Labels:</p>
-<ul>
-    {{#each post.labels}}
-    <li>{{this.name}}</li>
-    {{/each}}
-</ul>
-{{/if}}
+<script>
+    for (let el of document.getElementsByClassName("timestamp")) {
+        let time = new Date(el.innerText);
+        el.innerText = time.toLocaleString();
+    }
+</script>
