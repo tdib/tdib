@@ -102,6 +102,37 @@ article > *:not(.full_width) {
     margin-right: var(--space-lg);
 }
 
+#posts > a > div {
+    margin: var(--space-xs) var(--space-sm);
+    padding: var(--space-xs);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    
+    transition: background var(--transition);
+}
+
+#posts > a > div:hover {
+    background: var(--background-light);
+}
+
+#posts > a > div > .info {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-xs);
+}
+
+#posts > a > div > h4 {
+    margin-bottom: var(--space-xs);
+}
+
+#posts > a > div > .info > p {
+    font-size: 0.75rem;
+}
+
+#posts > a > div > .info > .pill_bar {
+    margin: 0;
+}
+
 #projects {
     display: flex;
     flex-direction: row;
@@ -208,5 +239,10 @@ article > *:not(.full_width) {
     #content > *:not(.full_width) {
         margin-left: var(--space-md);
         margin-right: var(--space-md);
+    }
+
+    #posts > a > div {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
